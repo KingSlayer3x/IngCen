@@ -79,13 +79,13 @@ export function Footer() {
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                 <span className="text-sm text-muted-foreground">
                   {language === 'ar' 
-                    ? 'دمشق، سوريا - شارع الحمرا، بناء الأمل، الطابق 3' 
-                    : 'Damascus, Syria - Al-Hamra St., Al-Amal Building, Floor 3'}
+                    ? 'طرطوس - دريكيش - السوق الرئيسي جانب الجامع' 
+                    : 'Tartous, Duraykish - Main market - next to the mosque '}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm text-muted-foreground" dir="ltr">+963 11 123 4567</span>
+                <span className="text-sm text-muted-foreground" dir="ltr">0987-562-678</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-primary" />
@@ -100,7 +100,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">{t.contact.info.hoursValue}</p>
             <div className="mt-4">
               <a
-                href="https://wa.me/963111234567"
+                href="https://wa.me/963987562678"
                 className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
@@ -35,9 +36,27 @@ export function HeroSection() {
         className="absolute bottom-1/4 start-1/4 h-72 w-72 bg-primary/15 blur-3xl"
       />
 
+      <motion.div
+        initial={{ opacity: 0, scale: 1.08 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
+        className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 justify-center"
+      >
+        <div className="relative h-[360px] w-[360px] sm:h-[520px] sm:w-[520px] lg:h-[680px] lg:w-[680px]">
+          <Image
+            src="/Center.png"
+            alt=""
+            fill
+            priority
+            aria-hidden="true"
+            className="object-contain opacity-[0.06] saturate-0 contrast-125 mix-blend-multiply dark:mix-blend-screen dark:opacity-[0.1]"
+          />
+        </div>
+      </motion.div>
+
       {/* Content */}
       <div className="container relative mx-auto flex min-h-[calc(100vh-4rem)] items-center px-4">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

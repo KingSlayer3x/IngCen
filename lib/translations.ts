@@ -16,7 +16,7 @@ export const translations = {
     hero: {
       title: 'اصنع مستقبلك مع',
       highlight: 'Ingenium',
-      subtitle: 'مركز التدريب الرائد في سوريا للهندسة المدنية، التصميم المعماري، وتطوير الويب',
+      subtitle: 'مركز التدريب الرائد في طرطوس للهندسة المدنية، التصميم المعماري، وتطوير الويب',
       browseCourses: 'تصفح الدورات',
       signUp: 'سجّل الآن'
     },
@@ -139,8 +139,8 @@ export const translations = {
       },
       location: {
         title: 'موقعنا',
-        address: 'دمشق، سوريا',
-        addressDetail: 'شارع الحمرا، بناء الأمل، الطابق الثالث'
+        address: 'طرطوس - دريكيش - سوريا',
+        addressDetail: 'السوق الرئيسي جانب مديرية المنطقة'
       }
     },
     // Contact

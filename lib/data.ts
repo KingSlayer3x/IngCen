@@ -391,7 +391,7 @@ export const courses: Course[] = [
       id: 'inst-4',
       name: { ar: 'م. عمر الحسين', en: 'Omar Al-Hussein' },
       title: { ar: 'مطور ويب أول', en: 'Senior Web Developer' },
-      bio: { ar: 'مطور Full Stack مع خبرة 8 سنوات', en: 'Full Stack developer with 8 years of experience' },
+      bio: { ar: 'مطور Full Stack مع خبرة 2 سنوات', en: 'Full Stack developer with 2 years of experience' },
       image: '/instructors/omar.jpg'
     },
     syllabus: [
@@ -443,7 +443,7 @@ export const testimonials: Testimonial[] = [
     name: { ar: 'رنا السعيد', en: 'Rana Al-Saeed' },
     role: { ar: 'طالبة هندسة', en: 'Engineering Student' },
     content: {
-      ar: 'أفضل مركز تدريب في سوريا. البيئة محفزة والدعم مستمر حتى بعد انتهاء الدورة.',
+      ar: 'من أفضل مراكز التدريب في طرطوس. البيئة محفزة والدعم مستمر حتى بعد انتهاء الدورة.',
       en: 'Best training center in Syria. The environment is motivating and support continues even after the course ends.'
     },
     image: '/testimonials/rana.jpg',
@@ -454,41 +454,81 @@ export const testimonials: Testimonial[] = [
 export const teamMembers: TeamMember[] = [
   {
     id: 'team-1',
-    name: { ar: 'د. خالد المصري', en: 'Dr. Khaled Al-Masri' },
+    name: { ar: 'أ. نديم يوسف', en: 'Mr. Nadeem Yousef' },
     role: { ar: 'المؤسس والمدير', en: 'Founder & Director' },
     bio: {
-      ar: 'حاصل على دكتوراه في الهندسة المدنية مع رؤية لتطوير الكوادر الهندسية في سوريا.',
-      en: 'PhD in Civil Engineering with a vision to develop engineering talents in Syria.'
+      ar: 'مهندس مدني - مطور عقاري - Etabs - Revit',
+      en: 'Civil Engineer - Real Estate Developer - Etabs - Revit'
     },
     image: '/team/khaled.jpg'
   },
   {
     id: 'team-2',
-    name: { ar: 'م. هدى العمر', en: 'Eng. Huda Al-Omar' },
-    role: { ar: 'مديرة الأكاديمية', en: 'Academy Director' },
+    name: { ar: 'آ. رشا يوسف', en: 'Ms. Rasha Yousef' },
+    role: { ar: 'مديرة الأكاديمية - إجازة في الفلسفة - دبلوم تأهيل وتخصص ', en: 'Director of the Academy - Bachelor of Philosophy - Diploma of Qualification and Specialization ' },
     bio: {
-      ar: 'خبرة 15 سنة في التعليم والتدريب المهني.',
-      en: '15 years of experience in education and professional training.'
+      ar: 'خبرة 4 سنة في التعليم والتدريب المهني.',
+      en: '4 years of experience in education and professional training.'
     },
     image: '/team/huda.jpg'
   },
   {
     id: 'team-3',
-    name: { ar: 'م. باسل النجار', en: 'Eng. Basel Al-Najjar' },
-    role: { ar: 'رئيس قسم البرمجيات', en: 'Head of Software Department' },
+    name: { ar: 'د. أكرم محفوض', en: 'PhD. Akram Mahfod' },
+    role: { ar: 'مهندس مدني', en: 'Civil engineer' },
     bio: {
       ar: 'متخصص في برامج التصميم الهندسي وتقنيات BIM.',
       en: 'Specialized in engineering design software and BIM technologies.'
+    },
+    image: '/team/basel.jpg'
+  },
+  {
+    id: 'team-4',
+    name: { ar: 'م. علي العمر', en: 'Eng. Ali Alomar' },
+    role: { ar: 'مهندس حواسيب وأتمتة', en: 'Computer and Automation Engineer' },
+    bio: {
+      ar: 'تطوير الويب - مهندس واجهات أمامية',
+      en: 'Web development - Front end engineer'
+    },
+    image: '/team/basel.jpg'
+  },
+  {
+    id: 'team-7',
+    name: { ar: 'م. زينب يونس', en: 'Eng. Zineb Younes' },
+    role: { ar: 'مهندسة مدنية', en: 'Civil Engineer' },
+    bio: {
+      ar: 'متخصصة في برامج التصميم الهندسي والحساب اليدوي',
+      en: 'Specializing in engineering design and manual calculation software'
+    },
+    image: '/team/basel.jpg'
+  },
+  {
+    id: 'team-5',
+    name: { ar: 'م. هلا محمود', en: 'Eng. Hala Mahmood' },
+    role: { ar: 'مهندسة معمارية', en: 'Architect' },
+    bio: {
+      ar: 'متخصصة في ريفيت للتصميم المعماري',
+      en: 'Specializing in Revit Architectural Design'
+    },
+    image: '/team/basel.jpg'
+  },
+  {
+    id: 'team-6',
+    name: { ar: 'م. منى وسوف', en: 'Eng. Mona Wassof' },
+    role: { ar: 'مهندسة زراعية', en: 'Agricultural Engineer' },
+    bio: {
+      ar: 'اختصاصية في علوم وتكنولوجيا الأغذية وتنسيق الحدائق',
+      en: 'Specialist in food science, technology and landscaping'
     },
     image: '/team/basel.jpg'
   }
 ]
 
 export const stats = {
-  students: 2500,
-  courses: 25,
-  instructors: 12,
-  years: 8
+  students: 53,
+  courses: 12,
+  instructors: 7,
+  years: 2
 }
 
 export const categoryLabels = {
