@@ -37,19 +37,36 @@ export function HeroSection() {
       />
 
       <motion.div
-        initial={{ opacity: 0, scale: 1.08 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.2 }}
-        className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 justify-center"
+        initial={{ opacity: 0, scale: 1.02, x: 24 }}
+        animate={{
+          opacity: 1,
+          scale: [1.02, 1.06, 1.02],
+          x: [0, 18, 0, -12, 0],
+          y: [0, -10, 0, 12, 0],
+          rotate: [-2, 1, -2],
+        }}
+        transition={{
+          duration: 22,
+          delay: 0.2,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+        className="pointer-events-none absolute inset-x-0 top-[58%] flex -translate-y-1/2 justify-center sm:justify-end"
       >
-        <div className="relative h-[360px] w-[360px] sm:h-[520px] sm:w-[520px] lg:h-[680px] lg:w-[680px]">
+        <div className="relative h-[420px] w-[420px] translate-y-10 sm:h-[560px] sm:w-[560px] sm:translate-x-16 sm:translate-y-16 lg:h-[760px] lg:w-[760px] lg:translate-x-20">
+          <motion.div
+            animate={{ opacity: [0.16, 0.24, 0.16], scale: [0.94, 1.02, 0.94] }}
+            transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute inset-[14%] rounded-full bg-primary/14 blur-3xl"
+          />
+          <div className="absolute inset-[8%] rounded-full bg-gradient-to-l from-primary/10 via-primary/5 to-transparent blur-2xl" />
           <Image
             src="/Center.png"
             alt=""
             fill
             priority
             aria-hidden="true"
-            className="object-contain opacity-[0.06] saturate-0 contrast-125 mix-blend-multiply dark:mix-blend-screen dark:opacity-[0.1]"
+            className="object-contain opacity-[0.14] saturate-[0.7] contrast-125 mix-blend-multiply dark:mix-blend-screen dark:opacity-[0.18]"
           />
         </div>
       </motion.div>
