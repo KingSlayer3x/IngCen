@@ -162,7 +162,7 @@ export const translations = {
         email: 'البريد الإلكتروني',
         address: 'العنوان',
         hours: 'ساعات العمل',
-        hoursValue: 'السبت - الخميس: 9 صباحاً - 9 مساءً'
+        hoursValue: 'السبت - الخميس: 9 صباحاً - 4 مساءً'
       }
     },
     // Footer
@@ -336,8 +336,8 @@ export const translations = {
       },
       location: {
         title: 'Our Location',
-        address: 'Damascus, Syria',
-        addressDetail: 'Al-Hamra Street, Al-Amal Building, 3rd Floor'
+        address: 'Tartous, Duraykish',
+        addressDetail: 'Main market street, near the District Directorate'
       }
     },
     // Contact
@@ -359,7 +359,7 @@ export const translations = {
         email: 'Email',
         address: 'Address',
         hours: 'Working Hours',
-        hoursValue: 'Saturday - Thursday: 9 AM - 9 PM'
+        hoursValue: 'Saturday - Thursday: 9 AM - 4 PM'
       }
     },
     // Footer
