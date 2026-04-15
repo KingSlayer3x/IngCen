@@ -2,8 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Clock, BarChart3, Calendar, User, ShoppingCart, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
-import * as Icons from 'lucide-react'
+import { Clock, BarChart3, Calendar, User, ShoppingCart, ArrowLeft, ChevronLeft, ChevronRight, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
@@ -14,7 +13,7 @@ import { SectionHeader } from '@/components/section-header'
 import { useAppStore } from '@/store/app-store'
 import { useCartStore } from '@/store/cart-store'
 import { translations } from '@/lib/translations'
-import { levelLabels, categoryLabels } from '@/lib/data'
+import { levelLabels, categoryLabels, courseIcons } from '@/lib/data'
 import type { Course } from '@/types'
 
 interface CourseDetailProps {
@@ -33,7 +32,7 @@ export function CourseDetail({ course, relatedCourses }: CourseDetailProps) {
   const { addItem } = useCartStore()
   const t = translations[language]
 
-  const IconComponent = (Icons as Record<string, React.ComponentType<{ className?: string }>>)[course.icon] || Icons.BookOpen
+  const IconComponent = courseIcons[course.icon] || BookOpen
   const BackIcon = language === 'ar' ? ChevronRight : ChevronLeft
 
   const formatPrice = (price: number) => {

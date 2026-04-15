@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-react'
+import { Building2, Layers, PenTool, Code2, Palette, Globe, Database, Figma, FileCode, Box, Layout, Cpu, Leaf } from 'lucide-react'
 import type { Course, Testimonial, TeamMember } from '@/types'
 
 export const courses: Course[] = [
@@ -21,11 +23,11 @@ export const courses: Course[] = [
     price: 450000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-1',
-      name: { ar: 'م. أحمد الخطيب', en: 'Eng. Ahmad Al-Khatib' },
-      title: { ar: 'مهندس إنشائي أول', en: 'Senior Structural Engineer' },
-      bio: { ar: 'خبرة أكثر من 10 سنوات في التصميم الإنشائي باستخدام برامج BIM', en: 'Over 10 years of experience in structural design using BIM software' },
-      image: '/instructors/ahmad.jpg'
+      id: 'team-1',
+      name: { ar: 'أ. نديم يوسف', en: 'Mr. Nadeem Yousef' },
+      title: { ar: 'مهندس مدني - مطور عقاري', en: 'Civil Engineer - Real Estate Developer' },
+      bio: { ar: 'متخصص في Etabs و Revit', en: 'Specialized in Etabs and Revit' },
+      image: '/instructors/nadeem.jpg'
     },
     syllabus: [
       { title: { ar: 'مقدمة في Revit', en: 'Introduction to Revit' }, description: { ar: 'التعرف على واجهة البرنامج والأدوات الأساسية', en: 'Getting familiar with the interface and basic tools' } },
@@ -37,105 +39,338 @@ export const courses: Course[] = [
     image: '/courses/revit.jpg'
   },
   {
-    id: 'etabs-structural',
-    slug: 'etabs-structural',
+    id: 'etabs-fundamental',
+    slug: 'etabs-fundamental',
     name: {
-      ar: 'التحليل الإنشائي باستخدام ETABS',
-      en: 'Structural Analysis with ETABS'
+      ar: 'أساسيات ETABS',
+      en: 'ETABS Fundamentals'
     },
     description: {
-      ar: 'دورة متقدمة في التحليل والتصميم الإنشائي للمباني متعددة الطوابق باستخدام برنامج ETABS.',
-      en: 'Advanced course in structural analysis and design of multi-story buildings using ETABS software.'
+      ar: 'تعلم أساسيات التحليل والإنشاء باستخدام برنامج ETABS.',
+      en: 'Learn the fundamentals of structural analysis and design using ETABS software.'
     },
     category: 'civil',
     software: 'CSI ETABS',
     icon: 'Layers',
-    duration: '50 ساعة',
-    level: 'intermediate',
-    price: 550000,
+    duration: '40 ساعة',
+    level: 'beginner',
+    price: 450000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-2',
-      name: { ar: 'م. سارة العلي', en: 'Eng. Sara Al-Ali' },
-      title: { ar: 'مهندسة تحليل إنشائي', en: 'Structural Analysis Engineer' },
-      bio: { ar: 'متخصصة في التحليل الإنشائي للمباني العالية', en: 'Specialized in structural analysis of high-rise buildings' },
-      image: '/instructors/sara.jpg'
+      id: 'team-1',
+      name: { ar: 'أ. نديم يوسف', en: 'Mr. Nadeem Yousef' },
+      title: { ar: 'مهندس مدني - مطور عقاري', en: 'Civil Engineer - Real Estate Developer' },
+      bio: { ar: 'متخصص في Etabs و Revit و SAFE', en: 'Specialized in Etabs, Revit, and SAFE' },
+      image: '/instructors/nadeem.jpg'
     },
     syllabus: [
-      { title: { ar: 'أساسيات النمذجة', en: 'Modeling Fundamentals' }, description: { ar: 'إنشاء النموذج الإنشائي وتعريف العناصر', en: 'Creating structural models and defining elements' } },
-      { title: { ar: 'الأحمال والتحليل', en: 'Loads & Analysis' }, description: { ar: 'تطبيق الأحمال وإجراء التحليل', en: 'Applying loads and performing analysis' } },
-      { title: { ar: 'التصميم', en: 'Design' }, description: { ar: 'تصميم العناصر الخرسانية والفولاذية', en: 'Designing concrete and steel elements' } }
+      { title: { ar: 'مقدمة في ETABS', en: 'Introduction to ETABS' }, description: { ar: 'واجهة البرنامج', en: 'Program interface' } },
+      { title: { ar: 'إنشاء النموذج', en: 'Model Creation' }, description: { ar: 'إنشاء النموذج الإنشائي', en: 'Creating structural model' } },
+      { title: { ar: 'التحليل الأساسي', en: 'Basic Analysis' }, description: { ar: 'تحليل الأحمال', en: 'Load analysis' } }
     ],
     schedule: 'الأحد والثلاثاء - 5:00 مساءً',
     image: '/courses/etabs.jpg'
   },
   {
-    id: 'autocad-civil',
-    slug: 'autocad-civil',
+    id: 'etabs-advanced',
+    slug: 'etabs-advanced',
     name: {
-      ar: 'AutoCAD للرسم الهندسي',
-      en: 'AutoCAD for Engineering Drawing'
+      ar: 'ETABS المتقدم',
+      en: 'ETABS Advanced'
     },
     description: {
-      ar: 'إتقان AutoCAD للرسم الهندسي ثنائي وثلاثي الأبعاد مع التركيز على التطبيقات المدنية.',
-      en: 'Master AutoCAD for 2D and 3D engineering drawing with focus on civil applications.'
+      ar: 'تعلم التحليل والتصميم المتقدم للمباني العالية باستخدام ETABS.',
+      en: 'Learn advanced analysis and design of high-rise buildings using ETABS.'
     },
     category: 'civil',
-    software: 'Autodesk AutoCAD',
-    icon: 'PenTool',
+    software: 'CSI ETABS',
+    icon: 'Layers',
+    duration: '45 ساعة',
+    level: 'advanced',
+    price: 550000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-1',
+      name: { ar: 'أ. نديم يوسف', en: 'Mr. Nadeem Yousef' },
+      title: { ar: 'مهندس مدني - мطور عقاري', en: 'Civil Engineer - Real Estate Developer' },
+      bio: { ar: 'متخصص في Etabs و Revit و SAFE', en: 'Specialized in Etabs, Revit, and SAFE' },
+      image: '/instructors/nadeem.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'النمذجة المتقدمة', en: 'Advanced Modeling' }, description: { ar: 'نمذجة المباني العالية', en: 'Modeling high-rise buildings' } },
+      { title: { ar: 'تحليل الزلازل', en: 'Seismic Analysis' }, description: { ar: 'تحليل الزلازل والرياح', en: 'Seismic and wind analysis' } },
+      { title: { ar: 'التصميم المتقدم', en: 'Advanced Design' }, description: { ar: 'تصميم العناصر', en: 'Element design' } }
+    ],
+    schedule: 'الاثنين والأربعاء - 6:00 مساءً',
+    image: '/courses/etabs-advanced.jpg'
+  },
+  {
+    id: 'safe-fundamental',
+    slug: 'safe-fundamental',
+    name: {
+      ar: 'أساسيات SAFE',
+      en: 'SAFE Fundamentals'
+    },
+    description: {
+      ar: 'تعلم أساسيات تحلل وتصميم الألواح والأساسات باستخدام SAFE.',
+      en: 'Learn the fundamentals of slab and foundation analysis and design using SAFE.'
+    },
+    category: 'civil',
+    software: 'CSI SAFE',
+    icon: 'Layers',
     duration: '35 ساعة',
+    level: 'beginner',
+    price: 400000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-1',
+      name: { ar: 'أ. نديم يوسف', en: 'Mr. Nadeem Yousef' },
+      title: { ar: 'مهندس مدني - مطور عقاري', en: 'Civil Engineer - Real Estate Developer' },
+      bio: { ar: 'متخصص في Etabs و Revit و SAFE', en: 'Specialized in Etabs, Revit, and SAFE' },
+      image: '/instructors/nadeem.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'مقدمة في SAFE', en: 'Introduction to SAFE' }, description: { ar: 'واجهة البرنامج', en: 'Program interface' } },
+      { title: { ar: 'تصميم الألواح', en: 'Slab Design' }, description: { ar: 'تصميم الألواح الخرسانية', en: 'Designing concrete slabs' } },
+      { title: { ar: 'تصميم الأساسات', en: 'Foundation Design' }, description: { ar: 'تصميم الأساسات', en: 'Designing foundations' } }
+    ],
+    schedule: 'السبت - 4:00 مساءً',
+    image: '/courses/safe.jpg'
+  },
+  {
+    id: 'safe-advanced',
+    slug: 'safe-advanced',
+    name: {
+      ar: 'SAFE المتقدم',
+      en: 'SAFE Advanced'
+    },
+    description: {
+      ar: 'تعلم التحليل والتصميم المتقدم للأساسات باستخدام SAFE.',
+      en: 'Learn advanced analysis and design of foundations using SAFE.'
+    },
+    category: 'civil',
+    software: 'CSI SAFE',
+    icon: 'Layers',
+    duration: '40 ساعة',
+    level: 'advanced',
+    price: 500000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-1',
+      name: { ar: 'أ. نديم يوسف', en: 'Mr. Nadeem Yousef' },
+      title: { ar: 'مهندس مدني - مطور عقاري', en: 'Civil Engineer - Real Estate Developer' },
+      bio: { ar: 'متخصص في Etabs و Revit و SAFE', en: 'Specialized in Etabs, Revit, and SAFE' },
+      image: '/instructors/nadeem.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'الأساسات المتقدمة', en: 'Advanced Foundations' }, description: { ar: 'تصميم الأساسات العميقة', en: 'Deep foundation design' } },
+      { title: { ar: 'تحليل التربة', en: 'Soil Analysis' }, description: { ar: 'تحليل التربة والأساسات', en: 'Soil and foundation analysis' } },
+      { title: { ar: 'التصميم الإنشائي', en: 'Structural Design' }, description: { ar: 'تصميم التفاصيل الإنشائية', en: 'Structural detail design' } }
+    ],
+    schedule: 'الثلاثاء - 6:00 مساءً',
+    image: '/courses/safe-advanced.jpg'
+  },
+  {
+    id: 'bim-fundamentals',
+    slug: 'bim-fundamentals',
+    name: {
+      ar: 'أساسيات BIM',
+      en: 'Fundamental BIM'
+    },
+    description: {
+      ar: 'تعلم أساسيات نمذجة المعلومات BIM وأفضل الممارسات في إدارة المشاريع.',
+      en: 'Learn the fundamentals of Building Information Modeling and best practices in project management.'
+    },
+    category: 'civil',
+    software: 'BIM',
+    icon: 'Building2',
+    duration: '30 ساعة',
     level: 'beginner',
     price: 350000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-1',
-      name: { ar: 'م. أحمد الخطيب', en: 'Eng. Ahmad Al-Khatib' },
-      title: { ar: 'مهندس إنشائي أول', en: 'Senior Structural Engineer' },
-      bio: { ar: 'خبرة أكثر من 10 سنوات في التصميم الإنشائي باستخدام برامج BIM', en: 'Over 10 years of experience in structural design using BIM software' },
-      image: '/instructors/ahmad.jpg'
+      id: 'team-3',
+      name: { ar: 'م. أكرم محفوض', en: 'Eng. Akram Mahfod' },
+      title: { ar: 'مهندس مدني', en: 'Civil Engineer' },
+      bio: { ar: 'متخصص في برامج التصميم الهندسي وتقنيات BIM', en: 'Specialized in engineering design software and BIM technologies' },
+      image: '/instructors/akram.jpg'
     },
     syllabus: [
-      { title: { ar: 'الأساسيات', en: 'Basics' }, description: { ar: 'أدوات الرسم والتعديل الأساسية', en: 'Basic drawing and modification tools' } },
-      { title: { ar: 'الرسم ثنائي الأبعاد', en: '2D Drawing' }, description: { ar: 'إنشاء المخططات الهندسية', en: 'Creating engineering plans' } },
-      { title: { ar: 'الرسم ثلاثي الأبعاد', en: '3D Drawing' }, description: { ar: 'النمذجة ثلاثية الأبعاد', en: '3D modeling techniques' } }
+      { title: { ar: 'مقدمة في BIM', en: 'Introduction to BIM' }, description: { ar: 'مفهوم BIM وأهميته', en: 'Concept and importance of BIM' } },
+      { title: { ar: 'أدوات BIM', en: 'BIM Tools' }, description: { ar: 'التعامل مع أدوات BIM', en: 'Working with BIM tools' } },
+      { title: { ar: 'إدارة البيانات', en: 'Data Management' }, description: { ar: 'إدارة بيانات المشروع', en: 'Managing project data' } }
     ],
-    schedule: 'الأربعاء والخميس - 6:00 مساءً',
-    image: '/courses/autocad.jpg'
+    schedule: 'الاثنين - 6:00 مساءً',
+    image: '/courses/bim.jpg'
   },
   {
-    id: 'sap2000-advanced',
-    slug: 'sap2000-advanced',
+    id: 'robot-structural',
+    slug: 'robot-structural',
     name: {
-      ar: 'SAP2000 المتقدم',
-      en: 'Advanced SAP2000'
+      ar: 'تحليل المنشآت باستخدام Robot',
+      en: 'Robot Structural Analysis'
     },
     description: {
-      ar: 'دورة متقدمة في التحليل الإنشائي للجسور والهياكل الخاصة باستخدام SAP2000.',
-      en: 'Advanced course in structural analysis of bridges and special structures using SAP2000.'
+      ar: 'تعلم تحليل المنشآت باستخدام برنامج Robot Structural Analysis.',
+      en: 'Learn structural analysis using Robot Structural Analysis software.'
     },
     category: 'civil',
-    software: 'CSI SAP2000',
-    icon: 'GitBranch',
-    duration: '45 ساعة',
-    level: 'advanced',
-    price: 600000,
+    software: 'Robot Structural Analysis',
+    icon: 'Cpu',
+    duration: '40 ساعة',
+    level: 'intermediate',
+    price: 500000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-2',
-      name: { ar: 'م. سارة العلي', en: 'Eng. Sara Al-Ali' },
-      title: { ar: 'مهندسة تحليل إنشائي', en: 'Structural Analysis Engineer' },
-      bio: { ar: 'متخصصة في التحليل الإنشائي للمباني العالية', en: 'Specialized in structural analysis of high-rise buildings' },
-      image: '/instructors/sara.jpg'
+      id: 'team-3',
+      name: { ar: 'م. أكرم محفوض', en: 'Eng. Akram Mahfod' },
+      title: { ar: 'مهندس مدني', en: 'Civil Engineer' },
+      bio: { ar: 'متخصص في برامج التصميم الهندسي وتقنيات BIM', en: 'Specialized in engineering design software and BIM technologies' },
+      image: '/instructors/akram.jpg'
     },
     syllabus: [
-      { title: { ar: 'الهياكل المعقدة', en: 'Complex Structures' }, description: { ar: 'نمذجة الهياكل غير المنتظمة', en: 'Modeling irregular structures' } },
-      { title: { ar: 'التحليل الديناميكي', en: 'Dynamic Analysis' }, description: { ar: 'تحليل الزلازل والرياح', en: 'Seismic and wind analysis' } }
+      { title: { ar: 'مقدمة في Robot', en: 'Introduction to Robot' }, description: { ar: 'واجهة البرنامج الأساسية', en: 'Basic interface' } },
+      { title: { ar: 'نمذجة المنشآت', en: 'Structural Modeling' }, description: { ar: 'إنشاء نماذج المنشآت', en: 'Creating structural models' } },
+      { title: { ar: 'التحليل والتصميم', en: 'Analysis & Design' }, description: { ar: 'تحليل الأحمال والتصميم', en: 'Load analysis and design' } }
+    ],
+    schedule: 'الأربعاء - 6:00 مساءً',
+    image: '/courses/robot.jpg'
+  },
+  {
+    id: 'revit-structure',
+    slug: 'revit-structure',
+    name: {
+      ar: 'Revit للهيكل الإنشائي',
+      en: 'Revit Structure'
+    },
+    description: {
+      ar: 'تعلم تصميم المنشآت الهيكلية باستخدام Revit Structure.',
+      en: 'Learn structural design using Revit Structure.'
+    },
+    category: 'civil',
+    software: 'Autodesk Revit',
+    icon: 'Building2',
+    duration: '35 ساعة',
+    level: 'intermediate',
+    price: 450000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-3',
+      name: { ar: 'م. أكرم محفوض', en: 'Eng. Akram Mahfod' },
+      title: { ar: 'مهندس مدني', en: 'Civil Engineer' },
+      bio: { ar: 'متخصص في برامج التصميم الهندسي وتقنيات BIM', en: 'Specialized in engineering design software and BIM technologies' },
+      image: '/instructors/akram.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'أساسيات Revit Structure', en: 'Revit Structure Basics' }, description: { ar: 'الواجهة والأدوات', en: 'Interface and tools' } },
+      { title: { ar: 'إنشاء الهيكل', en: 'Creating Structure' }, description: { ar: 'إنشاء العناصر الإنشائية', en: 'Creating structural elements' } },
+      { title: { ar: 'التوثيق', en: 'Documentation' }, description: { ar: 'إنتاج اللوحات والجداول', en: 'Producing sheets and schedules' } }
+    ],
+    schedule: 'الخميس - 6:00 مساءً',
+    image: '/courses/revit-structure.jpg'
+  },
+  {
+    id: 'primavera-p6',
+    slug: 'primavera-p6',
+    name: {
+      ar: 'إدارة المشاريع بـ Primavera P6',
+      en: 'Project Management with Primavera P6'
+    },
+    description: {
+      ar: 'تعلم إدارة المشاريع والهندسة باستخدام برنامج Primavera P6.',
+      en: 'Learn project and engineering management using Primavera P6 software.'
+    },
+    category: 'civil',
+    software: 'Primavera P6',
+    icon: 'Cpu',
+    duration: '30 ساعة',
+    level: 'intermediate',
+    price: 450000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-7',
+      name: { ar: 'م. زينب يونس', en: 'Eng. Zineb Younes' },
+      title: { ar: 'مهندسة مدنية', en: 'Civil Engineer' },
+      bio: { ar: 'متخصصة في برامج التصميم الهندسي والحساب اليدوي', en: 'Specializing in engineering design and manual calculation software' },
+      image: '/instructors/zineb.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'مقدمة في P6', en: 'Introduction to P6' }, description: { ar: 'واجهة البرنامج', en: 'Program interface' } },
+      { title: { ar: 'جدولة المشاريع', en: 'Project Scheduling' }, description: { ar: 'إنشاء جدول المشروع', en: 'Creating project schedules' } },
+      { title: { ar: 'إدارة الموارد', en: 'Resource Management' }, description: { ar: 'توزيع الموارد', en: 'Resource allocation' } }
     ],
     schedule: 'السبت - 4:00 مساءً',
-    image: '/courses/sap2000.jpg'
+    image: '/courses/primavera.jpg'
+  },
+  {
+    id: 'manual-calculations',
+    slug: 'manual-calculations',
+    name: {
+      ar: 'الحسابات اليدوية في الهندسة المدنية',
+      en: 'Manual Calculations in Civil Engineering'
+    },
+    description: {
+      ar: 'تعلم الحسابات اليدوية للمنشآت الخرسانية والمعدنية.',
+      en: 'Learn manual calculations for concrete and steel structures.'
+    },
+    category: 'civil',
+    software: 'Manual Calculations',
+    icon: 'PenTool',
+    duration: '25 ساعة',
+    level: 'intermediate',
+    price: 400000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-7',
+      name: { ar: 'م. زينب يونس', en: 'Eng. Zineb Younes' },
+      title: { ar: 'مهندسة مدنية', en: 'Civil Engineer' },
+      bio: { ar: 'متخصصة في برامج التصميم الهندسي والحساب اليدوي', en: 'Specializing in engineering design and manual calculation software' },
+      image: '/instructors/zineb.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'أساسيات الحسابات', en: 'Calculation Basics' }, description: { ar: 'مبادئ الحسابات', en: 'Calculation principles' } },
+      { title: { ar: 'التصميم الخرساني', en: 'Concrete Design' }, description: { ar: 'تصميم العناصر الخرسانية', en: 'Designing concrete elements' } },
+      { title: { ar: 'التصميم المعدني', en: 'Steel Design' }, description: { ar: 'تصميم العناصر المعدنية', en: 'Designing steel elements' } }
+    ],
+    schedule: 'الأحد - 5:00 مساءً',
+    image: '/courses/manual.jpg'
   },
 
   // Architecture & Design
+  {
+    id: 'revit-architecture',
+    slug: 'revit-architecture',
+    name: {
+      ar: 'Revit للتصميم المعماري',
+      en: 'Revit for Architectural Design'
+    },
+    description: {
+      ar: 'تعلم استخدام Revit لإنشاء تصاميم معمارية احترافية ونماذج BIM متكاملة.',
+      en: 'Learn to use Revit for creating professional architectural designs and integrated BIM models.'
+    },
+    category: 'architecture',
+    software: 'Autodesk Revit',
+    icon: 'Building2',
+    duration: '50 ساعة',
+    level: 'intermediate',
+    price: 550000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-5',
+      name: { ar: 'م. هلا محمود', en: 'Eng. Hala Mahmood' },
+      title: { ar: 'مهندسة معمارية', en: 'Architect' },
+      bio: { ar: 'متخصصة في Revit و 3ds Max و SketchUp', en: 'Specializing in Revit, 3ds Max, and SketchUp' },
+      image: '/instructors/hala.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'أساسيات Revit المعماري', en: 'Revit Architecture Basics' }, description: { ar: 'الواجهة والأدوات الأساسية', en: 'Interface and basic tools' } },
+      { title: { ar: 'إنشاء النموذج', en: 'Creating the Model' }, description: { ar: 'الجدران والأبواب والنوافذ', en: 'Walls, doors, and windows' } },
+      { title: { ar: 'المواد والتشطيبات', en: 'Materials & Finishes' }, description: { ar: 'تطبيق المواد والتشطيبات', en: 'Applying materials and finishes' } },
+      { title: { ar: 'الإخراج والتوثيق', en: 'Rendering & Documentation' }, description: { ar: 'إنتاج اللوحات والمخططات', en: 'Producing sheets and drawings' } }
+    ],
+    schedule: 'الأحد والثلاثاء - 6:00 مساءً',
+    image: '/courses/revit-arch.jpg'
+  },
   {
     id: '3dsmax-visualization',
     slug: '3dsmax-visualization',
@@ -144,29 +379,30 @@ export const courses: Course[] = [
       en: 'Architectural Visualization with 3ds Max'
     },
     description: {
-      ar: 'تعلم إنشاء تصورات معمارية احترافية باستخدام 3ds Max و V-Ray.',
-      en: 'Learn to create professional architectural visualizations using 3ds Max and V-Ray.'
+      ar: 'تعلم إنشاء تصورات معمارية احترافية ثلاثية الأبعاد باستخدام 3ds Max مع V-Ray.',
+      en: 'Learn to create professional 3D architectural visualizations using 3ds Max with V-Ray.'
     },
     category: 'architecture',
     software: 'Autodesk 3ds Max',
     icon: 'Box',
-    duration: '60 ساعة',
+    duration: '45 ساعة',
     level: 'intermediate',
-    price: 650000,
+    price: 500000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-3',
-      name: { ar: 'م. ليلى حسن', en: 'Arch. Layla Hassan' },
-      title: { ar: 'مصممة معمارية', en: 'Architectural Designer' },
-      bio: { ar: 'فنانة تصور معماري مع خبرة في المشاريع الدولية', en: 'Architectural visualization artist with international project experience' },
-      image: '/instructors/layla.jpg'
+      id: 'team-5',
+      name: { ar: 'م. هلا محمود', en: 'Eng. Hala Mahmood' },
+      title: { ar: 'مهندسة معمارية', en: 'Architect' },
+      bio: { ar: 'متخصصة في Revit و 3ds Max و SketchUp', en: 'Specializing in Revit, 3ds Max, and SketchUp' },
+      image: '/instructors/hala.jpg'
     },
     syllabus: [
       { title: { ar: 'أساسيات 3ds Max', en: '3ds Max Basics' }, description: { ar: 'واجهة البرنامج والنمذجة الأساسية', en: 'Interface and basic modeling' } },
       { title: { ar: 'المواد والإضاءة', en: 'Materials & Lighting' }, description: { ar: 'إنشاء المواد الواقعية والإضاءة', en: 'Creating realistic materials and lighting' } },
-      { title: { ar: 'الرندر', en: 'Rendering' }, description: { ar: 'إعدادات V-Ray للإخراج النهائي', en: 'V-Ray settings for final output' } }
+      { title: { ar: 'الكاميرا والإخراج', en: 'Camera & Rendering' }, description: { ar: 'إعداد الكاميرات وإعدادات V-Ray', en: 'Setting up cameras and V-Ray settings' } },
+      { title: { ar: 'المشاريع العملية', en: 'Practical Projects' }, description: { ar: 'تطبيق عملي على مشاريع معمارية', en: 'Hands-on architectural projects' } }
     ],
-    schedule: 'الأحد والثلاثاء والخميس - 7:00 مساءً',
+    schedule: 'السبت والثلاثاء - 5:00 مساءً',
     image: '/courses/3dsmax.jpg'
   },
   {
@@ -182,57 +418,158 @@ export const courses: Course[] = [
     },
     category: 'architecture',
     software: 'SketchUp Pro',
-    icon: 'Boxes',
+    icon: 'Box',
     duration: '30 ساعة',
     level: 'beginner',
     price: 300000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-3',
-      name: { ar: 'م. ليلى حسن', en: 'Arch. Layla Hassan' },
-      title: { ar: 'مصممة معمارية', en: 'Architectural Designer' },
-      bio: { ar: 'فنانة تصور معماري مع خبرة في المشاريع الدولية', en: 'Architectural visualization artist with international project experience' },
-      image: '/instructors/layla.jpg'
+      id: 'team-5',
+      name: { ar: 'م. هلا محمود', en: 'Eng. Hala Mahmood' },
+      title: { ar: 'مهندسة معمارية', en: 'Architect' },
+      bio: { ar: 'متخصصة في Revit و 3ds Max و SketchUp', en: 'Specializing in Revit, 3ds Max, and SketchUp' },
+      image: '/instructors/hala.jpg'
     },
     syllabus: [
       { title: { ar: 'أدوات الرسم', en: 'Drawing Tools' }, description: { ar: 'أدوات الرسم والدفع/السحب', en: 'Drawing tools and push/pull' } },
-      { title: { ar: 'المكونات', en: 'Components' }, description: { ar: 'إنشاء واستخدام المكونات', en: 'Creating and using components' } }
+      { title: { ar: 'المكونات', en: 'Components' }, description: { ar: 'إنشاء واستخدام المكونات', en: 'Creating and using components' } },
+      { title: { ar: 'المواد والإضاءة', en: 'Materials & Lighting' }, description: { ar: 'إضافة المواد والإضاءة', en: 'Adding materials and lighting' } }
     ],
     schedule: 'الاثنين والأربعاء - 5:00 مساءً',
     image: '/courses/sketchup.jpg'
   },
   {
-    id: 'lumion-rendering',
-    slug: 'lumion-rendering',
+    id: 'ai-revit-sketchup',
+    slug: 'ai-revit-sketchup',
     name: {
-      ar: 'الإخراج المعماري بـ Lumion',
-      en: 'Architectural Rendering with Lumion'
+      ar: 'استخدام الذكاء الاصطناعي مع Revit و SketchUp',
+      en: 'Using AI with Revit and SketchUp'
     },
     description: {
-      ar: 'تعلم إنشاء إخراج معماري سينمائي عالي الجودة باستخدام Lumion.',
-      en: 'Learn to create high-quality cinematic architectural renders using Lumion.'
+      ar: 'تعلم دمج أدوات الذكاء الاصطناعي في سير العمل المعماري لتسريع النمذجة والتحسين.',
+      en: 'Learn to integrate AI tools into your architectural workflow to speed up modeling and enhancement.'
     },
     category: 'architecture',
-    software: 'Lumion',
-    icon: 'Video',
-    duration: '25 ساعة',
+    software: 'AI + Revit/SketchUp',
+    icon: 'Cpu',
+    duration: '20 ساعة',
     level: 'intermediate',
-    price: 400000,
+    price: 350000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-3',
-      name: { ar: 'م. ليلى حسن', en: 'Arch. Layla Hassan' },
-      title: { ar: 'مصممة معمارية', en: 'Architectural Designer' },
-      bio: { ar: 'فنانة تصور معماري مع خبرة في المشاريع الدولية', en: 'Architectural visualization artist with international project experience' },
-      image: '/instructors/layla.jpg'
+      id: 'team-5',
+      name: { ar: 'م. هلا محمود', en: 'Eng. Hala Mahmood' },
+      title: { ar: 'مهندسة معمارية', en: 'Architect' },
+      bio: { ar: 'متخصصة في Revit و 3ds Max و SketchUp', en: 'Specializing in Revit, 3ds Max, and SketchUp' },
+      image: '/instructors/hala.jpg'
     },
     syllabus: [
-      { title: { ar: 'استيراد النماذج', en: 'Model Import' }, description: { ar: 'استيراد النماذج من برامج أخرى', en: 'Importing models from other software' } },
-      { title: { ar: 'المواد والبيئة', en: 'Materials & Environment' }, description: { ar: 'إعداد المواد والبيئة المحيطة', en: 'Setting up materials and environment' } },
-      { title: { ar: 'الإخراج والفيديو', en: 'Rendering & Video' }, description: { ar: 'إنتاج الصور والفيديوهات', en: 'Producing images and videos' } }
+      { title: { ar: 'مقدمة في الذكاء الاصطناعي', en: 'Introduction to AI' }, description: { ar: 'أساسيات AI في العمارة', en: 'Basics of AI in architecture' } },
+      { title: { ar: 'AI مع SketchUp', en: 'AI with SketchUp' }, description: { ar: 'استخدام AI لتوليد النماذج', en: 'Using AI to generate models' } },
+      { title: { ar: 'AI مع Revit', en: 'AI with Revit' }, description: { ar: 'أدوات AI للتصميم والتوثيق', en: 'AI tools for design and documentation' } },
+      { title: { ar: 'مشاريع عملية', en: 'Practical Projects' }, description: { ar: 'تطبيق عملي على مشاريع حقيقية', en: 'Hands-on real-world projects' } }
+    ],
+    schedule: 'الخميس - 6:00 مساءً',
+    image: '/courses/ai-architecture.jpg'
+  },
+  {
+    id: 'sketchup-landscape',
+    slug: 'sketchup-landscape',
+    name: {
+      ar: 'SketchUp لتنسيق الحدائق',
+      en: 'SketchUp for Landscape Design'
+    },
+    description: {
+      ar: 'تعلم النمذجة ثلاثية الأبعاد للحدائق والمشاريع الخارجية باستخدام SketchUp.',
+      en: 'Learn 3D modeling for gardens and outdoor projects using SketchUp.'
+    },
+    category: 'architecture',
+    software: 'SketchUp Pro',
+    icon: 'Box',
+    duration: '30 ساعة',
+    level: 'beginner',
+    price: 350000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-6',
+      name: { ar: 'م. منى وسوف', en: 'Eng. Mona Wassof' },
+      title: { ar: 'مهندسة زراعية - تنسيق حدائق', en: 'Agricultural Engineer - Landscape' },
+      bio: { ar: 'اختصاصية في تنسيق الحدائق والتصميم الخارجي', en: 'Specializing in landscape and outdoor design' },
+      image: '/instructors/mona.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'أدوات SketchUp', en: 'SketchUp Tools' }, description: { ar: 'أدوات الرسم والنمذجة', en: 'Drawing and modeling tools' } },
+      { title: { ar: 'تصميم الحدائق', en: 'Garden Design' }, description: { ar: 'تصميم المساحات الخارجية', en: 'Designing outdoor spaces' } },
+      { title: { ar: 'المواد والنباتات', en: 'Materials & Plants' }, description: { ar: 'تطبيق المواد والنباتات', en: 'Applying materials and plants' } }
     ],
     schedule: 'السبت - 10:00 صباحاً',
-    image: '/courses/lumion.jpg'
+    image: '/courses/sketchup.jpg'
+  },
+  {
+    id: 'revit-landscape',
+    slug: 'revit-landscape',
+    name: {
+      ar: 'Revit لتنسيق الحدائق',
+      en: 'Revit for Landscape Design'
+    },
+    description: {
+      ar: 'تعلم استخدام Revit لتصميم وتنسيق الحدائق والمساحات الخارجية.',
+      en: 'Learn to use Revit for designing and landscaping gardens and outdoor spaces.'
+    },
+    category: 'architecture',
+    software: 'Autodesk Revit',
+    icon: 'Building2',
+    duration: '35 ساعة',
+    level: 'intermediate',
+    price: 450000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-6',
+      name: { ar: 'م. منى وسوف', en: 'Eng. Mona Wassof' },
+      title: { ar: 'مهندسة زراعية - تنسيق حدائق', en: 'Agricultural Engineer - Landscape' },
+      bio: { ar: 'اختصاصية في تنسيق الحدائق والتصميم الخارجي', en: 'Specializing in landscape and outdoor design' },
+      image: '/instructors/mona.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'أساسيات Revit', en: 'Revit Basics' }, description: { ar: 'الواجهة والأدوات', en: 'Interface and tools' } },
+      { title: { ar: 'تصميم الحدائق', en: 'Garden Design' }, description: { ar: 'إنشاء نموذج الحديقة', en: 'Creating garden model' } },
+      { title: { ar: 'الإخراج', en: 'Rendering' }, description: { ar: 'إنتاج الصور والوثائق', en: 'Producing images and documentation' } }
+    ],
+    schedule: 'الأحد - 10:00 صباحاً',
+    image: '/courses/revit-landscape.jpg'
+  },
+  {
+    id: 'garden-planner',
+    slug: 'garden-planner',
+    name: {
+      ar: 'مخطط الحدائق',
+      en: 'Garden Planner'
+    },
+    description: {
+      ar: 'تعلم تصميم وتنسيق الحدائق والمشاريع الخارجية.',
+      en: 'Learn designing and landscaping gardens and outdoor projects.'
+    },
+    category: 'architecture',
+    software: 'Garden Planner',
+    icon: 'Leaf',
+    duration: '25 ساعة',
+    level: 'beginner',
+    price: 350000,
+    currency: 'SYP',
+    instructor: {
+      id: 'team-6',
+      name: { ar: 'م. منى وسوف', en: 'Eng. Mona Wassof' },
+      title: { ar: 'مهندسة زراعية - تنسيق حدائق', en: 'Agricultural Engineer - Landscape' },
+      bio: { ar: 'اختصاصية في تنسيق الحدائق والتصميم الخارجي', en: 'Specializing in landscape and outdoor design' },
+      image: '/instructors/mona.jpg'
+    },
+    syllabus: [
+      { title: { ar: 'أساسيات التصميم', en: 'Design Basics' }, description: { ar: 'مبادئ تصميم الحدائق', en: 'Garden design principles' } },
+      { title: { ar: 'اختيار النباتات', en: 'Plant Selection' }, description: { ar: 'اختيار النباتات المناسبة', en: 'Selecting appropriate plants' } },
+      { title: { ar: 'تنفيذ المشروع', en: 'Project Implementation' }, description: { ar: 'خطوات التنفيذ', en: 'Implementation steps' } }
+    ],
+    schedule: 'الثلاثاء - 5:00 مساءً',
+    image: '/courses/garden.jpg'
   },
 
   // Web Development
@@ -255,11 +592,11 @@ export const courses: Course[] = [
     price: 250000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-4',
-      name: { ar: 'م. عمر الحسين', en: 'Omar Al-Hussein' },
-      title: { ar: 'مطور ويب أول', en: 'Senior Web Developer' },
-      bio: { ar: 'مطور Full Stack مع خبرة 8 سنوات', en: 'Full Stack developer with 8 years of experience' },
-      image: '/instructors/omar.jpg'
+      id: 'team-4',
+      name: { ar: 'م. علي العمر', en: 'Eng. Ali Alomar' },
+      title: { ar: 'مهندس حواسيب وأتمتة', en: 'Computer and Automation Engineer' },
+      bio: { ar: 'متخصص في تطوير الويب واجهات أمامية', en: 'Specialized in Web development - Frontend' },
+      image: '/instructors/ali.jpg'
     },
     syllabus: [
       { title: { ar: 'HTML الأساسي', en: 'Basic HTML' }, description: { ar: 'العناصر والسمات والنماذج', en: 'Elements, attributes, and forms' } },
@@ -288,11 +625,11 @@ export const courses: Course[] = [
     price: 400000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-4',
-      name: { ar: 'م. عمر الحسين', en: 'Omar Al-Hussein' },
-      title: { ar: 'مطور ويب أول', en: 'Senior Web Developer' },
-      bio: { ar: 'مطور Full Stack مع خبرة 8 سنوات', en: 'Full Stack developer with 8 years of experience' },
-      image: '/instructors/omar.jpg'
+      id: 'team-4',
+      name: { ar: 'م. علي العمر', en: 'Eng. Ali Alomar' },
+      title: { ar: 'مهندس حواسيب وأتمتة', en: 'Computer and Automation Engineer' },
+      bio: { ar: 'متخصص في تطوير الويب واجهات أمامية', en: 'Specialized in Web development - Frontend' },
+      image: '/instructors/ali.jpg'
     },
     syllabus: [
       { title: { ar: 'ES6+ الميزات', en: 'ES6+ Features' }, description: { ar: 'Arrow functions, destructuring, modules', en: 'Arrow functions, destructuring, modules' } },
@@ -315,22 +652,22 @@ export const courses: Course[] = [
     },
     category: 'webdev',
     software: 'React',
-    icon: 'Atom',
+    icon: 'Cpu',
     duration: '55 ساعة',
     level: 'intermediate',
     price: 500000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-5',
-      name: { ar: 'م. نور الدين', en: 'Nour El-Din' },
-      title: { ar: 'مهندس Frontend', en: 'Frontend Engineer' },
-      bio: { ar: 'متخصص في React و Next.js', en: 'Specialized in React and Next.js' },
-      image: '/instructors/nour.jpg'
+      id: 'team-4',
+      name: { ar: 'م. علي العمر', en: 'Eng. Ali Alomar' },
+      title: { ar: 'مهندس حواسيب وأتمتة', en: 'Computer and Automation Engineer' },
+      bio: { ar: 'متخصص في تطوير الويب واجهات أمامية', en: 'Specialized in Web development - Frontend' },
+      image: '/instructors/ali.jpg'
     },
     syllabus: [
       { title: { ar: 'أساسيات React', en: 'React Basics' }, description: { ar: 'Components, Props, State', en: 'Components, Props, State' } },
       { title: { ar: 'Hooks المتقدمة', en: 'Advanced Hooks' }, description: { ar: 'useEffect, useContext, custom hooks', en: 'useEffect, useContext, custom hooks' } },
-      { title: { ar: 'إدارة الحالة', en: 'State Management' }, description: { ar: 'Redux و Zustand', en: 'Redux and Zustand' } }
+      { title: { ar: 'إدارة الحالة', en: 'State Management' }, description: { ar: 'إدارة الحالة في التطبيقات', en: 'State management in applications' } }
     ],
     schedule: 'السبت والاثنين - 5:00 مساءً',
     image: '/courses/react.jpg'
@@ -354,11 +691,11 @@ export const courses: Course[] = [
     price: 650000,
     currency: 'SYP',
     instructor: {
-      id: 'inst-5',
-      name: { ar: 'م. نور الدين', en: 'Nour El-Din' },
-      title: { ar: 'مهندس Frontend', en: 'Frontend Engineer' },
-      bio: { ar: 'متخصص في React و Next.js', en: 'Specialized in React and Next.js' },
-      image: '/instructors/nour.jpg'
+      id: 'team-4',
+      name: { ar: 'م. علي العمر', en: 'Eng. Ali Alomar' },
+      title: { ar: 'مهندس حواسيب وأتمتة', en: 'Computer and Automation Engineer' },
+      bio: { ar: 'متخصص في تطوير الويب واجهات أمامية', en: 'Specialized in Web development - Frontend' },
+      image: '/instructors/ali.jpg'
     },
     syllabus: [
       { title: { ar: 'App Router', en: 'App Router' }, description: { ar: 'التوجيه والتخطيطات', en: 'Routing and layouts' } },
@@ -368,39 +705,6 @@ export const courses: Course[] = [
     ],
     schedule: 'الثلاثاء والخميس - 6:00 مساءً',
     image: '/courses/nextjs.jpg'
-  },
-  {
-    id: 'nodejs-backend',
-    slug: 'nodejs-backend',
-    name: {
-      ar: 'Node.js لتطوير الخادم',
-      en: 'Node.js Backend Development'
-    },
-    description: {
-      ar: 'دورة متقدمة في بناء خوادم وAPIs باستخدام Node.js و Express.',
-      en: 'Advanced course in building servers and APIs using Node.js and Express.'
-    },
-    category: 'webdev',
-    software: 'Node.js',
-    icon: 'Server',
-    duration: '50 ساعة',
-    level: 'advanced',
-    price: 550000,
-    currency: 'SYP',
-    instructor: {
-      id: 'inst-4',
-      name: { ar: 'م. عمر الحسين', en: 'Omar Al-Hussein' },
-      title: { ar: 'مطور ويب أول', en: 'Senior Web Developer' },
-      bio: { ar: 'مطور Full Stack مع خبرة 2 سنوات', en: 'Full Stack developer with 2 years of experience' },
-      image: '/instructors/omar.jpg'
-    },
-    syllabus: [
-      { title: { ar: 'أساسيات Node.js', en: 'Node.js Basics' }, description: { ar: 'Modules, npm, file system', en: 'Modules, npm, file system' } },
-      { title: { ar: 'Express.js', en: 'Express.js' }, description: { ar: 'إنشاء APIs و middleware', en: 'Creating APIs and middleware' } },
-      { title: { ar: 'قواعد البيانات', en: 'Databases' }, description: { ar: 'MongoDB و PostgreSQL', en: 'MongoDB and PostgreSQL' } }
-    ],
-    schedule: 'الأحد والأربعاء - 7:00 مساءً',
-    image: '/courses/nodejs.jpg'
   }
 ]
 
@@ -474,7 +778,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 'team-3',
-    name: { ar: 'د. أكرم محفوض', en: 'PhD. Akram Mahfod' },
+    name: { ar: 'م. أكرم محفوض', en: 'Eng. Akram Mahfod' },
     role: { ar: 'مهندس مدني', en: 'Civil engineer' },
     bio: {
       ar: 'متخصص في برامج التصميم الهندسي وتقنيات BIM.',
@@ -507,18 +811,18 @@ export const teamMembers: TeamMember[] = [
     name: { ar: 'م. هلا محمود', en: 'Eng. Hala Mahmood' },
     role: { ar: 'مهندسة معمارية', en: 'Architect' },
     bio: {
-      ar: 'متخصصة في ريفيت للتصميم المعماري',
-      en: 'Specializing in Revit Architectural Design'
+      ar: 'متخصصة في Revit و 3ds Max و SketchUp',
+      en: 'Specializing in Revit, 3ds Max, and SketchUp'
     },
-    image: '/team/basel.jpg'
+    image: '/team/hala.jpg'
   },
   {
     id: 'team-6',
     name: { ar: 'م. منى وسوف', en: 'Eng. Mona Wassof' },
-    role: { ar: 'مهندسة زراعية', en: 'Agricultural Engineer' },
+    role: { ar: 'مهندسة زراعية - تنسيق حدائق', en: 'Agricultural Engineer - Landscape' },
     bio: {
-      ar: 'اختصاصية في علوم وتكنولوجيا الأغذية وتنسيق الحدائق',
-      en: 'Specialist in food science, technology and landscaping'
+      ar: 'اختصاصية في تنسيق الحدائق والتصميم الخارجي',
+      en: 'Specializing in landscape and outdoor design'
     },
     image: '/team/basel.jpg'
   }
@@ -526,9 +830,9 @@ export const teamMembers: TeamMember[] = [
 
 export const stats = {
   students: 53,
-  courses: 12,
+  courses: 13,
   instructors: 7,
-  years: 2
+  years: 10
 }
 
 export const categoryLabels = {
@@ -541,4 +845,20 @@ export const levelLabels = {
   beginner: { ar: 'مبتدئ', en: 'Beginner' },
   intermediate: { ar: 'متوسط', en: 'Intermediate' },
   advanced: { ar: 'متقدم', en: 'Advanced' }
+}
+
+export const courseIcons: Record<string, LucideIcon> = {
+  Building2,
+  Layers,
+  PenTool,
+  Code2,
+  Palette,
+  Globe,
+  Database,
+  Figma,
+  FileCode,
+  Box,
+  Layout,
+  Cpu,
+  Leaf
 }

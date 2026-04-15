@@ -123,7 +123,7 @@ export const translations = {
       subtitle: 'قصة Ingenium ورؤيتنا للمستقبل',
       story: {
         title: 'قصتنا',
-        content: 'تأسس مركز Ingenium في عام 2016 برؤية واضحة: سد الفجوة بين التعليم الأكاديمي ومتطلبات سوق العمل في سوريا. نؤمن بأن التدريب العملي المتخصص هو المفتاح لبناء جيل قادر على المنافسة والابتكار.'
+        content: 'تأسس مركز Ingenium في عام 2026 برؤية واضحة: سد الفجوة بين التعليم الأكاديمي ومتطلبات سوق العمل في سوريا. نؤمن بأن التدريب العملي المتخصص هو المفتاح لبناء جيل قادر على المنافسة والابتكار.'
       },
       mission: {
         title: 'مهمتنا',
@@ -320,7 +320,7 @@ export const translations = {
       subtitle: 'The Ingenium story and our vision for the future',
       story: {
         title: 'Our Story',
-        content: 'Ingenium Training Center was founded in 2016 with a clear vision: to bridge the gap between academic education and job market requirements in Syria. We believe that specialized practical training is the key to building a generation capable of competing and innovating.'
+        content: 'Ingenium Training Center was founded in 2026 with a clear vision: to bridge the gap between academic education and job market requirements in Syria. We believe that specialized practical training is the key to building a generation capable of competing and innovating.'
       },
       mission: {
         title: 'Our Mission',

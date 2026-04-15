@@ -2,15 +2,14 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Clock, BarChart3, ShoppingCart, ArrowUpRight } from 'lucide-react'
-import * as Icons from 'lucide-react'
+import { Clock, BarChart3, ShoppingCart, ArrowUpRight, BookOpen, type LucideIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { useAppStore } from '@/store/app-store'
 import { useCartStore } from '@/store/cart-store'
 import { translations } from '@/lib/translations'
-import { levelLabels, categoryLabels } from '@/lib/data'
+import { levelLabels, categoryLabels, courseIcons } from '@/lib/data'
 import type { Course, CourseLevel, CourseCategory } from '@/types'
 
 interface CourseCardProps {
@@ -35,7 +34,7 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
   const { addItem } = useCartStore()
   const t = translations[language]
 
-  const IconComponent = (Icons as Record<string, React.ComponentType<{ className?: string }>>)[course.icon] || Icons.BookOpen
+  const IconComponent: LucideIcon = courseIcons[course.icon] || BookOpen
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat(language === 'ar' ? 'ar-SY' : 'en-US').format(price)

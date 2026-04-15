@@ -25,7 +25,6 @@ export function Providers({ children }: ProvidersProps) {
     }
   }, [theme, language, mounted])
 
-  // Prevent hydration mismatch
   if (!mounted) {
     return (
       <div className="dark" dir="rtl" lang="ar">

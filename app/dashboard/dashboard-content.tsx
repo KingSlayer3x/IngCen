@@ -8,7 +8,7 @@ import {
   BookOpen, Calendar, Award, Settings, User, 
   Clock, Play, Download, ChevronLeft, ChevronRight 
 } from 'lucide-react'
-import * as Icons from 'lucide-react'
+import { courseIcons } from '@/lib/data'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
@@ -124,7 +124,7 @@ export function DashboardContent() {
             {enrolledCoursesData.length > 0 ? (
               <div className="grid gap-6 md:grid-cols-2">
                 {enrolledCoursesData.map((item, index) => {
-                  const IconComponent = (Icons as Record<string, React.ComponentType<{ className?: string }>>)[item.course!.icon] || Icons.BookOpen
+                  const IconComponent = courseIcons[item.course!.icon] || BookOpen
                   return (
                     <motion.div
                       key={item.courseId}

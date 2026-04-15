@@ -199,7 +199,7 @@ export function ContactContent() {
                     : 'For a quick response, contact us directly via WhatsApp'}
                 </p>
                 <a
-                  href="https://wa.me/963111234567"
+                  href="https://wa.me/963987562678"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"

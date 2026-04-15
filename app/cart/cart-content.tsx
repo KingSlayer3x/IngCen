@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ShoppingCart, Trash2, Plus, Minus, ArrowLeft, ArrowRight } from 'lucide-react'
-import * as Icons from 'lucide-react'
+import { ShoppingCart, Trash2, Plus, Minus, ArrowLeft, ArrowRight, BookOpen } from 'lucide-react'
+import { courseIcons } from '@/lib/data'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
@@ -78,7 +78,7 @@ export function CartContent() {
               <CardContent className="divide-y divide-border p-0">
                 <AnimatePresence mode="popLayout">
                   {items.map((item) => {
-                    const IconComponent = (Icons as Record<string, React.ComponentType<{ className?: string }>>)[item.course.icon] || Icons.BookOpen
+                    const IconComponent = courseIcons[item.course.icon] || BookOpen
                     return (
                       <motion.div
                         key={item.course.id}
