@@ -46,13 +46,28 @@ export function SignupForm() {
     setIsLoading(true)
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          fullName: formData.name,
+          password: formData.password,
+          phone: formData.phone,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Signup failed')
+      }
 
       login({
-        id: '1',
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
+        id: data.user.id,
+        name: data.user.fullName,
+        email: data.user.email,
+        phone: data.user.phone || '',
         enrolledCourses: [],
         certificates: [],
       })
@@ -62,8 +77,14 @@ export function SignupForm() {
       setTimeout(() => {
         router.push('/dashboard')
       }, 2000)
-    } catch {
-      setError(language === 'ar' ? 'حدث خطأ أثناء إنشاء الحساب' : 'An error occurred while creating the account')
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : language === 'ar'
+            ? 'حدث خطأ أثناء إنشاء الحساب'
+            : 'An error occurred while creating the account'
+      )
     } finally {
       setIsLoading(false)
     }
@@ -92,7 +113,7 @@ export function SignupForm() {
                 {language === 'ar' ? 'تم إنشاء الحساب بنجاح!' : 'Account Created Successfully!'}
               </h2>
               <p className="mt-2 text-muted-foreground">
-                {language === 'ar' 
+                {language === 'ar'
                   ? 'جاري توجيهك إلى لوحة التحكم...'
                   : 'Redirecting you to the dashboard...'}
               </p>
@@ -120,7 +141,7 @@ export function SignupForm() {
             </Link>
             <CardTitle className="text-2xl">{t.auth.signup}</CardTitle>
             <CardDescription>
-              {language === 'ar' 
+              {language === 'ar'
                 ? 'أنشئ حسابك للبدء في رحلة التعلم'
                 : 'Create your account to start your learning journey'}
             </CardDescription>

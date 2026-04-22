@@ -16,7 +16,7 @@ export function LoginForm() {
   const router = useRouter()
   const { language, login } = useAppStore()
   const t = translations[language]
-  
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -27,38 +27,50 @@ export function LoginForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsLoading(true)
     setError('')
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    if (!formData.email || !formData.password) {
+      setError(language === 'ar' ? 'يرجى ملء جميع الحقول' : 'Please fill all fields')
+      return
+    }
 
-    // Mock login - in production, this would be a real API call
-    if (formData.email && formData.password) {
+    setIsLoading(true)
+
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Login failed')
+      }
+
       login({
-        id: '1',
-        name: language === 'ar' ? 'محمد أحمد' : 'Mohammad Ahmad',
-        email: formData.email,
-        phone: '+963 123 456 789',
-        enrolledCourses: [
-          {
-            courseId: 'revit-fundamentals',
-            progress: 65,
-            enrolledAt: '2024-01-15',
-            nextSession: '2024-02-15 18:00',
-          },
-          {
-            courseId: 'react-complete',
-            progress: 30,
-            enrolledAt: '2024-02-01',
-            nextSession: '2024-02-17 17:00',
-          },
-        ],
+        id: data.user.id,
+        name: data.user.fullName,
+        email: data.user.email,
+        phone: data.user.phone || '',
+        enrolledCourses: [],
         certificates: [],
       })
+
       router.push('/dashboard')
-    } else {
-      setError(language === 'ar' ? 'يرجى ملء جميع الحقول' : 'Please fill all fields')
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : language === 'ar'
+            ? 'فشل تسجيل الدخول'
+            : 'Login failed'
+      )
+    } finally {
       setIsLoading(false)
     }
   }
@@ -73,7 +85,6 @@ export function LoginForm() {
       >
         <Card className="border-border/50 bg-card">
           <CardHeader className="text-center">
-            {/* Logo */}
             <Link href="/" className="mx-auto mb-4 flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center bg-primary">
                 <span className="font-mono text-xl font-bold text-primary-foreground">I</span>
@@ -81,7 +92,7 @@ export function LoginForm() {
             </Link>
             <CardTitle className="text-2xl">{t.auth.login}</CardTitle>
             <CardDescription>
-              {language === 'ar' 
+              {language === 'ar'
                 ? 'أدخل بياناتك للوصول إلى حسابك'
                 : 'Enter your credentials to access your account'}
             </CardDescription>
@@ -95,7 +106,6 @@ export function LoginForm() {
                 </div>
               )}
 
-              {/* Email */}
               <div className="space-y-2">
                 <Label htmlFor="email">{t.auth.email}</Label>
                 <div className="relative">
@@ -112,7 +122,6 @@ export function LoginForm() {
                 </div>
               </div>
 
-              {/* Password */}
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">{t.auth.password}</Label>
