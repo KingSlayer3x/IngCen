@@ -61,11 +61,9 @@ export function HeroSection() {
           />
           <div className="absolute inset-[8%] rounded-full bg-gradient-to-l from-primary/10 via-primary/5 to-transparent blur-2xl" />
           <Image
-            src="/Center.png"
+            src="./Center.png"
             alt=""
-            width={500}
-            height={500}
-            fill={flase}
+            fill
             priority
             aria-hidden="true"
             className="object-contain opacity-[0.14] saturate-[0.7] contrast-125 mix-blend-multiply dark:mix-blend-screen dark:opacity-[0.18]"
