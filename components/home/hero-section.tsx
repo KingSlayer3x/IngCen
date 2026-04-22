@@ -61,7 +61,7 @@ export function HeroSection() {
           />
           <div className="absolute inset-[8%] rounded-full bg-gradient-to-l from-primary/10 via-primary/5 to-transparent blur-2xl" />
           <Image
-            src="/Center.png"
+            src="./Center.png"
             alt=""
             fill
             priority
