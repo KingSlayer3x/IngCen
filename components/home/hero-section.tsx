@@ -63,7 +63,9 @@ export function HeroSection() {
           <Image
             src="/Center.png"
             alt=""
-            fill
+            width={500}
+            height={500}
+            fill={flase}
             priority
             aria-hidden="true"
             className="object-contain opacity-[0.14] saturate-[0.7] contrast-125 mix-blend-multiply dark:mix-blend-screen dark:opacity-[0.18]"
