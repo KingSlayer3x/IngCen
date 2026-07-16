@@ -1,4 +1,4 @@
-# Ingenium - مركز التدريب المهني
+Ingenium - مركز التدريب المهني
 
 Professional Training Center in Tartous, Syria
 
@@ -7,24 +7,23 @@ Professional Training Center in Tartous, Syria
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescript.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind CSS-4-38bdf8)](https://tailwindcss.com)
 
-## حول المركز
+ حول المركز
 
-Ingenium هو مركز تدريب مهني متخصص في طرطوس، سوريا. يوفر المركز دورات تدريبية متخصصة في:
+Ingenium  مركز تدريب مهني متخصص في طرطوس، سوريا. يوفر المركز دورات تدريبية متخصصة في
 
-- **الهندسة المدنية** - برامج BIM والتحليل الإنشائي
-- **التصميم المعماري** - النمذجة والتصور
-- **تطوير الويب** - تطبيقات الويب الحديثة
+-الهندسة المدنية - برامج BIM والتحليل الإنشائي
+- التصميم المعماري - النمذجة والتصور
+- تطوير الويب - تطبيقات الويب الحديثة
 
-## التقنيات
+ التقنيات
 
-- **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript
-- **UI**: Radix UI + Tailwind CSS 4
-- **State**: Zustand
-- **Animation**: Framer Motion
-- **Form**: React Hook Form + Zod
+- Framework: Next.js 16 (App Router)
+- Language: TypeScript
+- UI: Radix UI + Tailwind CSS 4
+- State: Zustand
+- Animation: Framer Motion
+- Form: React Hook Form + Zod
 
-##开始使用
 
 ```bash
 # Install dependencies
@@ -72,10 +71,10 @@ store/                 # Zustand state
 └── cart-store.ts     # Shopping cart
 ```
 
-## الفريق
+ الفريق
 
 | المدرب | التخصص |
-|--------|--------|
+
 | أ. نديم يوسف | ETABS, SAFE, Revit |
 | م. أكرم محفوض | BIM, Robot, Revit Structure |
 | م. زينب يونس | Primavera P6, الحسابات اليدوية |
@@ -83,7 +82,7 @@ store/                 # Zustand state
 | م. منى وسوف | SketchUp, Revit,Garden Planner |
 | م. علي العمر | HTML/CSS, JavaScript, React, Next.js |
 
-## الصفحات
+ الصفحات
 
 - `/` - الصفحة الرئيسية
 - `/courses` - الدورات التدريبية
@@ -96,14 +95,13 @@ store/                 # Zustand state
 - `/signup` - إنشاء حساب
 - `/dashboard` - لوحة التحكم
 
-## الإ Enrollment
+Enrollment
 
 Students contact via WhatsApp for enrollment. The checkout flow generates a pre-filled message with course details.
 
-## الترخيص
+الترخيص
 
 مركز Ingenium للتدريب المهني - جميع الحقوق محفوظة 2026
 
----
 
 Built with Next.js & Tailwind CSS
