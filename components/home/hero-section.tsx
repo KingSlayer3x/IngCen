@@ -60,14 +60,7 @@ export function HeroSection() {
             className="absolute inset-[14%] rounded-full bg-primary/14 blur-3xl"
           />
           <div className="absolute inset-[8%] rounded-full bg-gradient-to-l from-primary/10 via-primary/5 to-transparent blur-2xl" />
-          <Image
-            src="./Center.png"
-            alt=""
-            fill
-            priority
-            aria-hidden="true"
-            className="object-contain opacity-[0.14] saturate-[0.7] contrast-125 mix-blend-multiply dark:mix-blend-screen dark:opacity-[0.18]"
-          />
+          
         </div>
       </motion.div>
 
@@ -151,7 +144,7 @@ export function HeroSection() {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
@@ -168,7 +161,7 @@ export function HeroSection() {
             className="mx-auto mt-1 h-2 w-1 bg-primary"
           />
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </section>
   )
 }
